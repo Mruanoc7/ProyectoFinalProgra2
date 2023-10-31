@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="DB.Estudiantes" table="estudiantes" schema="public" catalog="postgres">
+        <id name="estudianteId">
+            <column name="estudiante_id" sql-type="integer"/>
+        </id>
+        <property name="nombre">
+            <column name="nombre" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="apellido">
+            <column name="apellido" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="numeroIdentificacion">
+            <column name="numero_identificacion" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="direccion">
+            <column name="direccion" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="telefono">
+            <column name="telefono" sql-type="varchar(15)" length="15" not-null="true"/>
+        </property>
+        <property name="correoElectronico">
+            <column name="correo_electronico" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="usuario">
+            <column name="usuario" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="contrasena">
+            <column name="contraseña" sql-type="varchar(255)" length="255" not-null="true"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>

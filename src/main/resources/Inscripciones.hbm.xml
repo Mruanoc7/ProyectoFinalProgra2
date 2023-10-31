@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="DB.Inscripciones" table="inscripciones" schema="public" catalog="postgres">
+        <id name="inscripcionId" type="java.lang.Integer">
+            <column name="inscripcion_id" />
+            <generator class="identity" />
+        </id>
+        <property name="fechaInscripcion" type="java.util.Date">
+            <column name="fecha_inscripcion" not-null="true" />
+        </property>
+        <property name="estadoInscripcion" type="java.lang.String">
+            <column name="estado_inscripcion" length="20" not-null="true" />
+        </property>
+        <many-to-one name="estudiantes" class="DB.Estudiantes" fetch="select">
+            <column name="estudiante_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cursos" class="DB.Cursos" fetch="select">
+            <column name="curso_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

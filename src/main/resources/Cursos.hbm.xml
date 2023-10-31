@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="DB.Cursos" table="cursos" schema="public" catalog="postgres">
+        <id name="cursoId">
+            <column name="curso_id" sql-type="integer"/>
+        </id>
+        <property name="nombreCurso">
+            <column name="nombre_curso" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="descripcion">
+            <column name="descripcion" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="fechaInicio">
+            <column name="fecha_inicio" sql-type="date" not-null="true"/>
+        </property>
+        <property name="fechaFinalizacion">
+            <column name="fecha_finalizacion" sql-type="date" not-null="true"/>
+        </property>
+        <property name="cupoMaximo">
+            <column name="cupo_maximo" sql-type="integer" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
